@@ -6,6 +6,10 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:barbershop.db"
 
 class Client < ActiveRecord::Base
+	vaidates :name, :presence: true
+	vaidates :phone, :presence: true
+	vaidates :datestamp, :presence: true
+	vaidates :color, :presence: true
 end
 
 class Barber < ActiveRecord::Base
@@ -26,11 +30,8 @@ end
 
 post '/visit' do
 
-
 	c = Client.new params[:client]
 	c.save
-
-
 
 	erb "<h2>Спасибо, вы записались!</h2>"
 end
