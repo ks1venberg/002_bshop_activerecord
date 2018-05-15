@@ -36,12 +36,12 @@ $(function() {
 
     <div class="form-group">
     <label>Выберите парикмахера</label>
-    <input name="barber[name]" type="text" class="form-control" placeholder="парикмахер" value="<%= @barbers.name %>">
-  </div>
-
-<!--        <% @barbers.each do |item| %>
-        <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
-      <% end %> -->
+    <select name="list_barber" class="form-control">
+      <% @barbers.each do |item| %>
+        <option <%= @barbers == item['name'] ? 'selected' : '' %>><%= item['name']%>
+        </option>
+      <% end %>
+    </select>
 
 
 

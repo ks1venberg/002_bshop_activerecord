@@ -26,6 +26,7 @@ end
 
 get '/visit' do
 	@c = Client.new
+	@barbers = Barber.order('name ASC')
 	erb :visit
 end
 
